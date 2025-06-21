@@ -9,7 +9,7 @@ export const LoginForm: React.FC = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const { login, switchUser } = useAuth();
+  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,12 +28,6 @@ export const LoginForm: React.FC = () => {
     }
   };
 
-  const demoUsers = [
-    { id: '1', name: 'John Doe', role: 'Employee', email: 'john.doe@company.com' },
-    { id: '2', name: 'Sarah Johnson', role: 'Manager', email: 'sarah.johnson@company.com' },
-    { id: '3', name: 'Lisa Chen', role: 'HR Admin', email: 'hr.admin@company.com' },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
@@ -47,7 +41,7 @@ export const LoginForm: React.FC = () => {
 
         <Card>
           <CardHeader>
-            <h2 className="text-xl font-semibold text-gray-900">Welcome back</h2>
+            <h2 className="text-xl font-semibold text-gray-900">Welcome</h2>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -101,22 +95,6 @@ export const LoginForm: React.FC = () => {
                 {isLoading ? 'Signing in...' : 'Sign in'}
               </Button>
             </form>
-
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-600 mb-3">Demo Users (Password: password123)</p>
-              <div className="space-y-2">
-                {demoUsers.map((user) => (
-                  <button
-                    key={user.id}
-                    onClick={() => switchUser(user.id)}
-                    className="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors duration-200"
-                  >
-                    <div className="font-medium text-sm">{user.name}</div>
-                    <div className="text-xs text-gray-500">{user.role} • {user.email}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
           </CardContent>
         </Card>
       </div>

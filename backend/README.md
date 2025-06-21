@@ -22,7 +22,7 @@ Backend API pour le système de gestion des congés RH développé avec Spring B
 
 ### 1. Cloner le Repository
 ```bash
-git clone <repository-url>
+git clone <https://github.com/RarojoMisaina/GestionRH>
 cd hr-leave-management/backend
 ```
 
