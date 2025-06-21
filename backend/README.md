@@ -29,7 +29,8 @@ cd hr-leave-management/backend
 ### 2. Configuration de la Base de Données
 Créer une base de données MySQL :
 ```sql
-CREATE DATABASE hr_leave_management;
+CREATE DATABASE 
+;
 CREATE USER 'hruser'@'localhost' IDENTIFIED BY 'hrpassword';
 GRANT ALL PRIVILEGES ON hr_leave_management.* TO 'hruser'@'localhost';
 FLUSH PRIVILEGES;
